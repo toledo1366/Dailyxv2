@@ -308,6 +308,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "jiffy",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/jiffy-6.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/js-0.7.1",
       "packageUri": "lib/",
@@ -662,7 +668,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-05T14:03:27.646090Z",
+  "generated": "2024-08-08T20:55:33.903799Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/damianszmulik/Desktop/devtools/flutter",

@@ -16,7 +16,7 @@ class TaskMapper extends BaseMapper<TaskDto, Task>{
       startDate: DateTime.parse(dto.startDate), 
       isDone: dto.endDate != null,
       endDate: dto.endDate != null ? DateTime.parse(dto.endDate!) : null,
-      deadline: DateTime.parse(dto.deadline) 
+      deadline: DateTime.now()
     );
   }
 

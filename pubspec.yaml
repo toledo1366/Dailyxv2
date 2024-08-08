@@ -54,6 +54,7 @@ dependencies:
   rolling_bottom_bar: ^0.2.2
   table_calendar: ^3.0.9
   hive_generator: ^2.0.1
+  jiffy: ^6.2.1
   
 
 dev_dependencies:

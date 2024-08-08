@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dailyx/core/di/di.dart';
+import 'package:dailyx/core/routing/app_router.dart';
 import 'package:dailyx/presentation/widgets/appbar/custom_app_bar.dart';
 import 'package:dailyx/presentation/widgets/end_drawer/custom_end_drawer.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,25 @@ class _MainPageState extends State<MainPage> {
       appBar: const CustomAppBar(title: 'Hi'),
       body: BlocProvider<MainPageCubit>(
         create: (context) => cubit,
-        child: BlocBuilder<MainPageCubit, MainPageState>(
-          builder: (context, state) => Padding(padding: const EdgeInsets.all(12.0), child: _buildContent(context, cubit),),
-        )
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: BlocBuilder<MainPageCubit, MainPageState>(
+            builder: (context, state) => state.maybeMap(
+              tasksLoaded: (value) => _buildContent(context, cubit),
+              orElse: () => Container(color: Colors.red,)
+            )
+          ),
+        ),
       ),
       endDrawer: const CustomEndDrawer(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 255, 218, 162),
+        child: const Icon(
+          Icons.add, 
+          color: Colors.white,
+        ),
+        onPressed: () => _navigateToTaskCreationForm(context)
+      ),
     );
   }
   
@@ -65,7 +80,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  bool _getCheckerValue({bool value = false}){
-    return value;
+  void _navigateToTaskCreationForm(BuildContext context) {
+    AutoRouter.of(context).popAndPush(const TaskCreationFormRoute());
   }
 }

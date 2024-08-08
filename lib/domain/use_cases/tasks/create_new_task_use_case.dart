@@ -1,4 +1,5 @@
 import 'package:injectable/injectable.dart';
+import 'package:jiffy/jiffy.dart';
 
 import '../../mappers/tasks/task_mapper.dart';
 import '../../models/tasks/task.dart';
@@ -11,8 +12,11 @@ class CreateNewTaskUseCase{
 
   CreateNewTaskUseCase(this._repository, this._mapper);
 
-  void execute(Task task){
+  Future<bool> execute(String title, String description, DateTime startDate, DateTime? endDate, Jiffy? repeatBy) async {
+    final Task task = Task(summary: title, description: description, startDate: startDate, isDone: false, deadline: endDate!);
     final taskDto = _mapper.toDto(task);
-    _repository.createNewTask(taskDto);
+    final isCompleted = await _repository.createNewTask(taskDto);
+
+    return isCompleted; 
   }
 }
