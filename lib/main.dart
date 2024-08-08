@@ -1,0 +1,32 @@
+import 'package:dailyx/core/db/register_adapters.dart';
+import 'package:dailyx/core/routing/app_router.dart';
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'core/di/di.dart';
+
+Future<void> main() async {
+  await _initializeTools();
+  
+  runApp(const MyApp());
+}
+
+Future<void> _initializeTools() async {
+  await Hive.initFlutter();
+  registerAdapters();
+  await configureDependencies();
+}
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final appRouter = AppRouter();
+
+    return MaterialApp.router(
+      routerConfig: appRouter.config(),  
+      debugShowCheckedModeBanner: false,  
+    );
+  }
+}
