@@ -15,7 +15,7 @@ class CreateNewTaskUseCase{
   Future<bool> execute(String title, String description, DateTime startDate, DateTime? endDate, Jiffy? repeatBy) async {
     final Task task = Task(summary: title, description: description, startDate: startDate, isDone: false, deadline: endDate!);
     final taskDto = _mapper.toDto(task);
-    final isCompleted = await _repository.createNewTask(taskDto);
+    final isCompleted = await _repository.createNewTask([taskDto]);
 
     return isCompleted; 
   }

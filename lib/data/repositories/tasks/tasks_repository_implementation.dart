@@ -3,8 +3,11 @@ import 'package:dailyx/domain/repositories/tasks/tasks_repository.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/helpers/keys.dart';
+
 @Injectable(as: TasksRepository)
 class TasksRepositoryImplementation implements TasksRepository{
+  
   @override
   Future<bool> deleteTask(TaskDto task) {
     // TODO: implement deleteTask
@@ -15,14 +18,20 @@ class TasksRepositoryImplementation implements TasksRepository{
   Future<List<TaskDto>> getItems() async {
     List<TaskDto> tasks = [];
 
-    final box = await Hive.openBox<TaskDto>('tasks');
+    final box = await Hive.openBox(tasksKey);
 
     try{
-      final task = box.get('tasks');
-      tasks.add(task!);
+      final taskRaw = box.get(tasksKey);
+      for(var item in taskRaw!){
+        tasks.add(item);
+      }
+      
+      box.close();
 
       return tasks;
     } catch (ex) {
+      box.close();
+
       return [];
     }
   }
@@ -34,11 +43,22 @@ class TasksRepositoryImplementation implements TasksRepository{
   }
   
   @override
-  Future<bool> createNewTask(TaskDto task) async {
-    final box = await Hive.openBox<TaskDto>('tasks');
+  Future<bool> createNewTask(List<TaskDto> tasks) async {
+    final box = await Hive.openBox(tasksKey);
 
     try{
-      box.put('tasks', task);
+      final items = box.get(tasksKey);
+
+      if(items != null){
+        box.clear();
+        items.addAll(tasks);
+        box.put(tasksKey, items);
+        box.close();
+
+        return true;
+      }
+
+      box.put(tasksKey, tasks);
       box.close();
 
       return true;

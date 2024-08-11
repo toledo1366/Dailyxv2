@@ -1,13 +1,13 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dailyx/core/di/di.dart';
-import 'package:dailyx/core/routing/app_router.dart';
 import 'package:dailyx/presentation/pages/task_creation_form/cubit/task_creation_form_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
-@RoutePage()
+import '../../../core/routing/app_router.dart';
+
 class TaskCreationFormPage extends StatefulWidget {
   const TaskCreationFormPage({super.key});
 
@@ -230,6 +230,6 @@ class _TaskCreationFormPageState extends State<TaskCreationFormPage> {
   }
 
   void _navigateBack() {
-    AutoRouter.of(context).navigate(const MainRoute());
+    router.go('/');
   }
 }

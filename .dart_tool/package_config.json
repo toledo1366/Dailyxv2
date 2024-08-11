@@ -26,18 +26,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "auto_route",
-      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/auto_route-7.9.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
-      "name": "auto_route_generator",
-      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/auto_route_generator-7.3.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
       "name": "bloc",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/bloc-8.1.4",
       "packageUri": "lib/",
@@ -212,6 +200,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/damianszmulik/Desktop/devtools/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "freezed",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/freezed-2.5.2",
       "packageUri": "lib/",
@@ -240,6 +234,12 @@
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "go_router",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/go_router-14.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "graphs",
@@ -458,12 +458,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "petitparser",
-      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
       "name": "platform",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/platform-3.1.5",
       "packageUri": "lib/",
@@ -650,12 +644,6 @@
       "languageVersion": "3.0"
     },
     {
-      "name": "xml",
-      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/xml-6.5.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
-    },
-    {
       "name": "yaml",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/yaml-3.1.2",
       "packageUri": "lib/",
@@ -668,7 +656,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-08T20:55:33.903799Z",
+  "generated": "2024-08-11T19:28:27.596221Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/damianszmulik/Desktop/devtools/flutter",

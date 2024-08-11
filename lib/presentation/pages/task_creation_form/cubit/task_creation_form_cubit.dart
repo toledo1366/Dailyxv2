@@ -23,6 +23,6 @@ class TaskCreationFormCubit extends Cubit<TaskCreationFormState>{
   void createTask() async {
     final isAdded = await _useCase.execute(title, description, startDate, endDate, repeatBy);
     
-    isAdded ? emit(const TaskCreationFormState.taskCreated()) : emit(TaskCreationFormState.error('error'));
+    isAdded ? emit(const TaskCreationFormState.taskCreated()) : emit(const TaskCreationFormState.error('error'));
   }
 }

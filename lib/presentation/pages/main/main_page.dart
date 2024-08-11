@@ -1,15 +1,15 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dailyx/core/di/di.dart';
 import 'package:dailyx/core/routing/app_router.dart';
+import 'package:dailyx/presentation/pages/main/widgets/tasks_list_item.dart';
 import 'package:dailyx/presentation/widgets/appbar/custom_app_bar.dart';
 import 'package:dailyx/presentation/widgets/end_drawer/custom_end_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../domain/models/tasks/task.dart';
 import 'cubit/main_page_cubit.dart';
 
 
-@RoutePage()
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
           padding: const EdgeInsets.all(12.0),
           child: BlocBuilder<MainPageCubit, MainPageState>(
             builder: (context, state) => state.maybeMap(
-              tasksLoaded: (value) => _buildContent(context, cubit),
+              tasksLoaded: (value) => _buildContent(context, cubit, value.tasks),
               orElse: () => Container(color: Colors.red,)
             )
           ),
@@ -46,41 +46,22 @@ class _MainPageState extends State<MainPage> {
           Icons.add, 
           color: Colors.white,
         ),
-        onPressed: () => _navigateToTaskCreationForm(context)
+        onPressed: () => _navigateToTaskCreationForm()
       ),
     );
   }
   
-  Widget _buildContent(BuildContext context, MainPageCubit cubit) {
-    bool isDone = false;
+  Widget _buildContent(BuildContext context, MainPageCubit cubit, List<Task> tasks) {
+    
 
-    return ListView.separated(
-      separatorBuilder: (context, index) => const Divider(height: 15, thickness: 0.0, color: Colors.white,),
-      itemCount: BlocProvider.of<MainPageCubit>(context).tasks.length,
-      itemBuilder: (context, index) {
-        return Builder(builder: (context) => Card(
-          color: const Color.fromARGB(255, 255, 218, 162),
-          margin: const EdgeInsets.only(left: 10, right: 10),
-          child: Row(
-            children: [
-              Expanded(
-                child: Checkbox(
-                  value: isDone, 
-                  onChanged: (value) {
-                    setState(() {
-                      isDone = value!;
-                    });
-                }),
-              ),
-              Text(cubit.tasks[index].summary)
-            ],
-          ),
-        ));
-      }
+    return ListView.builder(
+      clipBehavior: Clip.none,
+      itemCount: tasks.length,
+      itemBuilder: (context, index) => TaskListItem(task: tasks[index])
     );
   }
 
-  void _navigateToTaskCreationForm(BuildContext context) {
-    AutoRouter.of(context).popAndPush(const TaskCreationFormRoute());
+  void _navigateToTaskCreationForm() {
+    router.go('/task_creation_form');
   }
 }
