@@ -20,7 +20,7 @@ mixin _$MainPageState {
   TResult when<TResult extends Object?>({
     required TResult Function() created,
     required TResult Function() loading,
-    required TResult Function() tasksLoaded,
+    required TResult Function(List<Task> tasks) tasksLoaded,
     required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$MainPageState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? created,
     TResult? Function()? loading,
-    TResult? Function()? tasksLoaded,
+    TResult? Function(List<Task> tasks)? tasksLoaded,
     TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$MainPageState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? created,
     TResult Function()? loading,
-    TResult Function()? tasksLoaded,
+    TResult Function(List<Task> tasks)? tasksLoaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$CreatedImpl implements _Created {
   TResult when<TResult extends Object?>({
     required TResult Function() created,
     required TResult Function() loading,
-    required TResult Function() tasksLoaded,
+    required TResult Function(List<Task> tasks) tasksLoaded,
     required TResult Function(String errorMessage) error,
   }) {
     return created();
@@ -137,7 +137,7 @@ class _$CreatedImpl implements _Created {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? created,
     TResult? Function()? loading,
-    TResult? Function()? tasksLoaded,
+    TResult? Function(List<Task> tasks)? tasksLoaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return created?.call();
@@ -148,7 +148,7 @@ class _$CreatedImpl implements _Created {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? created,
     TResult Function()? loading,
-    TResult Function()? tasksLoaded,
+    TResult Function(List<Task> tasks)? tasksLoaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() created,
     required TResult Function() loading,
-    required TResult Function() tasksLoaded,
+    required TResult Function(List<Task> tasks) tasksLoaded,
     required TResult Function(String errorMessage) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? created,
     TResult? Function()? loading,
-    TResult? Function()? tasksLoaded,
+    TResult? Function(List<Task> tasks)? tasksLoaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? created,
     TResult Function()? loading,
-    TResult Function()? tasksLoaded,
+    TResult Function(List<Task> tasks)? tasksLoaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -319,6 +319,8 @@ abstract class _$$TasksLoadedImplCopyWith<$Res> {
   factory _$$TasksLoadedImplCopyWith(
           _$TasksLoadedImpl value, $Res Function(_$TasksLoadedImpl) then) =
       __$$TasksLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Task> tasks});
 }
 
 /// @nodoc
@@ -328,36 +330,66 @@ class __$$TasksLoadedImplCopyWithImpl<$Res>
   __$$TasksLoadedImplCopyWithImpl(
       _$TasksLoadedImpl _value, $Res Function(_$TasksLoadedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tasks = null,
+  }) {
+    return _then(_$TasksLoadedImpl(
+      null == tasks
+          ? _value._tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<Task>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$TasksLoadedImpl implements _TasksLoaded {
-  const _$TasksLoadedImpl();
+  const _$TasksLoadedImpl(final List<Task> tasks) : _tasks = tasks;
+
+  final List<Task> _tasks;
+  @override
+  List<Task> get tasks {
+    if (_tasks is EqualUnmodifiableListView) return _tasks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tasks);
+  }
 
   @override
   String toString() {
-    return 'MainPageState.tasksLoaded()';
+    return 'MainPageState.tasksLoaded(tasks: $tasks)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TasksLoadedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$TasksLoadedImpl &&
+            const DeepCollectionEquality().equals(other._tasks, _tasks));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tasks));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksLoadedImplCopyWith<_$TasksLoadedImpl> get copyWith =>
+      __$$TasksLoadedImplCopyWithImpl<_$TasksLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() created,
     required TResult Function() loading,
-    required TResult Function() tasksLoaded,
+    required TResult Function(List<Task> tasks) tasksLoaded,
     required TResult Function(String errorMessage) error,
   }) {
-    return tasksLoaded();
+    return tasksLoaded(tasks);
   }
 
   @override
@@ -365,10 +397,10 @@ class _$TasksLoadedImpl implements _TasksLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? created,
     TResult? Function()? loading,
-    TResult? Function()? tasksLoaded,
+    TResult? Function(List<Task> tasks)? tasksLoaded,
     TResult? Function(String errorMessage)? error,
   }) {
-    return tasksLoaded?.call();
+    return tasksLoaded?.call(tasks);
   }
 
   @override
@@ -376,12 +408,12 @@ class _$TasksLoadedImpl implements _TasksLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? created,
     TResult Function()? loading,
-    TResult Function()? tasksLoaded,
+    TResult Function(List<Task> tasks)? tasksLoaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
     if (tasksLoaded != null) {
-      return tasksLoaded();
+      return tasksLoaded(tasks);
     }
     return orElse();
   }
@@ -425,7 +457,12 @@ class _$TasksLoadedImpl implements _TasksLoaded {
 }
 
 abstract class _TasksLoaded implements MainPageState {
-  const factory _TasksLoaded() = _$TasksLoadedImpl;
+  const factory _TasksLoaded(final List<Task> tasks) = _$TasksLoadedImpl;
+
+  List<Task> get tasks;
+  @JsonKey(ignore: true)
+  _$$TasksLoadedImplCopyWith<_$TasksLoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -495,7 +532,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() created,
     required TResult Function() loading,
-    required TResult Function() tasksLoaded,
+    required TResult Function(List<Task> tasks) tasksLoaded,
     required TResult Function(String errorMessage) error,
   }) {
     return error(errorMessage);
@@ -506,7 +543,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? created,
     TResult? Function()? loading,
-    TResult? Function()? tasksLoaded,
+    TResult? Function(List<Task> tasks)? tasksLoaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -517,7 +554,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? created,
     TResult Function()? loading,
-    TResult Function()? tasksLoaded,
+    TResult Function(List<Task> tasks)? tasksLoaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
