@@ -23,4 +23,10 @@ class MainPageCubit extends Cubit<MainPageState>{
       emit(MainPageState.tasksLoaded(tasks));
     }
   }
+
+  String calculateTaskEndTime(Task task){
+    final lasts = task.deadline.difference(task.startDate).inDays;
+
+    return 'Pozostało $lasts dni';
+  }
 }

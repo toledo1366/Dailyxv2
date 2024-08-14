@@ -8,11 +8,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 85, 147, 255),
+      centerTitle: false,
+      backgroundColor: const Color.fromARGB(255, 255, 218, 162),
       title: Text(
-        title, 
+        title + ', Damian!', 
         style: const TextStyle(
-          color: Colors.white
+          color: Colors.blue,
+          fontWeight: FontWeight.bold
         ),
       ),
       actions: [
@@ -20,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
           onPressed: () => Scaffold.of(context).openEndDrawer(), 
           icon: const Icon(
             Icons.more_vert, 
-            color: Colors.white,
+            color: Colors.blue,
           ),
         ),
       ],

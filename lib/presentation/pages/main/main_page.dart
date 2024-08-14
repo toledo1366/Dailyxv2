@@ -26,16 +26,21 @@ class _MainPageState extends State<MainPage> {
     cubit.getTasksList();
 
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Hi'),
-      body: BlocProvider<MainPageCubit>(
-        create: (context) => cubit,
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: BlocBuilder<MainPageCubit, MainPageState>(
-            builder: (context, state) => state.maybeMap(
-              tasksLoaded: (value) => _buildContent(context, cubit, value.tasks),
-              orElse: () => Container(color: Colors.red,)
-            )
+      appBar: const CustomAppBar(title: 'Cześć'),
+      body: SafeArea(
+        child: Container(
+          color: const Color.fromARGB(255, 255, 218, 162),
+          child: BlocProvider<MainPageCubit>(
+            create: (context) => cubit,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: BlocBuilder<MainPageCubit, MainPageState>(
+                builder: (context, state) => state.maybeMap(
+                  tasksLoaded: (value) => _buildContent(context, cubit, value.tasks),
+                  orElse: () => Container(color: Colors.red,)
+                )
+              ),
+            ),
           ),
         ),
       ),
@@ -52,12 +57,16 @@ class _MainPageState extends State<MainPage> {
   }
   
   Widget _buildContent(BuildContext context, MainPageCubit cubit, List<Task> tasks) {
-    
-
-    return ListView.builder(
-      clipBehavior: Clip.none,
-      itemCount: tasks.length,
-      itemBuilder: (context, index) => TaskListItem(task: tasks[index])
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            clipBehavior: Clip.none,
+            itemCount: tasks.length,
+            itemBuilder: (context, index) => TaskListItem(task: tasks[index])
+          ),
+        ),
+      ],
     );
   }
 
