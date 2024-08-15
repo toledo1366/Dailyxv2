@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
-  final String title;
+  final Widget child;
 
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: false,
-      backgroundColor: const Color.fromARGB(255, 255, 218, 162),
-      title: Text(
-        title + ', Damian!', 
-        style: const TextStyle(
-          color: Colors.blue,
+      title: const Text(
+        'Cześć, Damian!', 
+        style: TextStyle(
+          color: Colors.white,
           fontWeight: FontWeight.bold
         ),
       ),
-      actions: [
-        IconButton(
-          onPressed: () => Scaffold.of(context).openEndDrawer(), 
-          icon: const Icon(
-            Icons.more_vert, 
-            color: Colors.blue,
-          ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(40),
+          bottomRight: Radius.circular(40)
+        )
+      ),
+      backgroundColor: Color.fromARGB(255, 132, 200, 255),
+      bottom: PreferredSize(
+        preferredSize: const Size(double.infinity, 100), 
+        child: Container(
+          child: child,
         ),
-      ],
+      ),
     );
   }
   

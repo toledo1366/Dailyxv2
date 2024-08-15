@@ -16,13 +16,31 @@ class MainPageCubit extends Cubit<MainPageState>{
 
   MainPageCubit(this._getTasksUseCase) : super(const MainPageState.created());
 
-  void getTasksList() async {
-    tasks = await _getTasksUseCase.execute();
+  void getTasksList(DateTime selectedDate) async {
+    emit(const MainPageState.loading());
 
-    if(tasks.isNotEmpty) {
-      emit(MainPageState.tasksLoaded(tasks));
+    if(tasks.isEmpty){
+      tasks = await _getTasksUseCase.execute();
     }
+
+    final List<Task> tasksForSelectedDate = [];
+
+    for(var task in tasks){
+      if(task.startDate == selectedDate){
+        tasksForSelectedDate.add(task);
+      }
+    }
+
+    if(tasksForSelectedDate.isNotEmpty) {
+      emit(MainPageState.tasksLoaded(tasksForSelectedDate));
+
+      return;
+    }
+
+    emit(const MainPageState.error('Brak zadań na dziś'));
   }
+
+
 
   String calculateTaskEndTime(Task task){
     final lasts = task.deadline.difference(task.startDate).inDays;

@@ -524,6 +524,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "simple_gesture_detector",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/simple_gesture_detector-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/damianszmulik/Desktop/devtools/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -570,6 +576,12 @@
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/string_scanner-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "table_calendar",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/table_calendar-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "term_glyph",
@@ -650,7 +662,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-13T20:34:37.676402Z",
+  "generated": "2024-08-14T14:51:23.068805Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/damianszmulik/Desktop/devtools/flutter",
