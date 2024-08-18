@@ -5,6 +5,7 @@ import 'package:dailyx/presentation/widgets/end_drawer/custom_end_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:stroke_text/stroke_text.dart';
 
 import '../../../domain/models/tasks/task.dart';
 import 'cubit/main_page_cubit.dart';
@@ -29,82 +30,88 @@ class _MainPageState extends State<MainPage> {
 
     return BlocProvider<MainPageCubit>(
       create: (context) => cubit,
-      
-    );
-
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 218, 162),
-      appBar: AppBar(
-        centerTitle: false,
-        title: const Padding(
-          padding: EdgeInsets.only(top: 30, left: 15),
-            child: Text(
-            'Cześć, Damian!', 
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(40),
-            bottomRight: Radius.circular(40)
-          )
-        ),
-        backgroundColor: const Color.fromARGB(255, 132, 200, 255),
-        bottom: PreferredSize(
-          preferredSize: const Size(double.infinity, 100), 
-          child: Container(
-            child: buildDaySelector(context),
-          ),
-        ),
-        actions: [
-          Builder(
-            builder: (context) => IconButton(
-              padding: const EdgeInsets.only(top: 30),
-              icon: const Icon(Icons.more_horiz, color: Colors.white,),
-              onPressed: () => Scaffold.of(context).openEndDrawer(),
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            ),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        bottom: false,
-        child: Container(
-          // color: const Color.fromARGB(255, 255, 218, 162),
-          child: BlocProvider<MainPageCubit>(
-            create: (context) => cubit,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: BlocBuilder<MainPageCubit, MainPageState>(
-                builder: (context, state) => state.maybeMap(
-                  tasksLoaded: (value) => buildContent(context, cubit, value.tasks),
-                  orElse: () => Container(color: Colors.red,)
-                )
+      child: BlocBuilder<MainPageCubit, MainPageState>(
+        builder: (context, state) => Scaffold(
+          backgroundColor: const Color.fromARGB(255, 255, 218, 162),
+          appBar: AppBar(
+            centerTitle: false,
+            title: const Padding(
+              padding: EdgeInsets.only(top: 10, left: 15),
+                child: StrokeText(
+                text: 'Cześć, Damian!', 
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold
+                ),
+                strokeColor: Colors.black,
               ),
             ),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40)
+              ),
+              side: BorderSide(color: Colors.black)
+            ),
+            backgroundColor: const Color.fromARGB(255, 132, 200, 255),
+            bottom: PreferredSize(
+              preferredSize: const Size(double.infinity, 50), 
+              child: Container(
+                child: buildDaySelector(context),
+              ),
+            ),
+            actions: [
+              Builder(
+                builder: (context) => IconButton(
+                  padding: const EdgeInsets.only(top: 10),
+                  icon: const Icon(Icons.more_horiz, color: Colors.white,),
+                  onPressed: () => Scaffold.of(context).openEndDrawer(),
+                  tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                ),
+              ),
+            ],
+          ),
+          body: state.map(
+            created: (_) => Container(), 
+            loading: (_) => Container(), 
+            tasksLoaded: (value) => SafeArea(
+              bottom: false,
+              child: buildContent(context, cubit, value.tasks),
+            ), 
+            error: (message) => Container()
+          ),
+          endDrawer: const CustomEndDrawer(),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(255, 255, 218, 162),
+            child: const Icon(
+              Icons.add, 
+              color: Colors.white,
+            ),
+            onPressed: () => _navigateToTaskCreationForm()
           ),
         ),
-      ),
-      endDrawer: const CustomEndDrawer(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 255, 218, 162),
-        child: const Icon(
-          Icons.add, 
-          color: Colors.white,
-        ),
-        onPressed: () => _navigateToTaskCreationForm()
       ),
     );
   }
   
   Widget buildContent(BuildContext context, MainPageCubit cubit, List<Task> tasks) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0), 
+          child: Text(
+            'Podsumowanie',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+        ),        
+        buildSummary(context),
         Expanded(
+          flex: 3,
           child: ListView.builder(
             itemCount: tasks.length,
             itemBuilder: (context, index) => TaskListItem(task: tasks[index])
@@ -119,7 +126,7 @@ class _MainPageState extends State<MainPage> {
   }
   
   Widget buildDaySelector(BuildContext context) {
-    DateFormat formatter = DateFormat('EEEE, d MMMM, y', 'pl_PL');
+    DateFormat formatter = DateFormat('EEE, d MMMM, y', 'pl_PL');
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -127,7 +134,7 @@ class _MainPageState extends State<MainPage> {
         IconButton(
           onPressed: (){
             setState(() {
-              focusedDay = focusedDay.subtract(Duration(days: 1));
+              focusedDay = focusedDay.subtract(const Duration(days: 1));
               BlocProvider.of<MainPageCubit>(context).getTasksList(focusedDay);
             });
           }, 
@@ -144,13 +151,125 @@ class _MainPageState extends State<MainPage> {
         IconButton(
           onPressed: () {
             setState(() {
-              focusedDay = focusedDay.add(Duration(days: 1));
+              focusedDay = focusedDay.add(const Duration(days: 1));
               BlocProvider.of<MainPageCubit>(context).getTasksList(focusedDay);
             });
           }, 
           icon: const Icon(Icons.arrow_right_rounded, color: Colors.white, size: 50,)
         ),
       ],
+    );
+  }
+
+  Widget buildSummary(BuildContext context) {
+    return Expanded(
+      flex: 2,
+      child: Center(
+        child: GridView(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 20.0,
+            crossAxisSpacing: 20.0,
+            mainAxisExtent: 175
+          ),
+          children: [
+            GestureDetector(
+              onTap: (){},
+              child: const Card(
+                shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black), borderRadius: BorderRadius.all(Radius.circular(10))),
+                color: Color.fromARGB(255, 172, 173, 255),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text('Oczekujące')
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: (){},
+              child: const Card(
+                shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black), borderRadius: BorderRadius.all(Radius.circular(10))),
+                color: Color.fromARGB(255, 255, 94, 94),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text('W trakcie')
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: (){},
+              child: const Card(
+                shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black), borderRadius: BorderRadius.all(Radius.circular(10))),
+                color: Color.fromARGB(255, 104, 210, 255),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text('Po terminie')
+                    ],
+                  ),
+                ),  
+              ),
+            ),
+            GestureDetector(
+              onTap: (){},
+              child: const Card(
+                shape: RoundedRectangleBorder(side: BorderSide(color: Colors.black), borderRadius: BorderRadius.all(Radius.circular(10))),
+                color: Color.fromARGB(255, 131, 255, 135),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text('Zakończone')
+                    ],
+                  ),
+                ),  
+              ),
+            ),
+          ],
+        ),
+      )
     );
   }
 }

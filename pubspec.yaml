@@ -57,6 +57,7 @@ dependencies:
   go_router: ^14.2.3
   calendar_view: ^1.2.0
   table_calendar: ^3.1.2
+  stroke_text: ^0.0.3
   
 
 dev_dependencies:

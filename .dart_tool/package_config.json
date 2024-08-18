@@ -578,6 +578,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "stroke_text",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/stroke_text-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "table_calendar",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/table_calendar-3.1.2",
       "packageUri": "lib/",
@@ -662,7 +668,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-14T14:51:23.068805Z",
+  "generated": "2024-08-18T16:43:37.827220Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/damianszmulik/Desktop/devtools/flutter",

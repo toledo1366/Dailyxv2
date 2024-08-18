@@ -26,7 +26,7 @@ class MainPageCubit extends Cubit<MainPageState>{
     final List<Task> tasksForSelectedDate = [];
 
     for(var task in tasks){
-      if(task.startDate == selectedDate){
+      if(selectedDate.isAfter(task.startDate) && selectedDate.isBefore(task.deadline.add(const Duration(days: 1)))){
         tasksForSelectedDate.add(task);
       }
     }
