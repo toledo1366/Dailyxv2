@@ -290,6 +290,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "icon_decoration",
+      "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/icon_decoration-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "injectable",
       "rootUri": "file:///Users/damianszmulik/.pub-cache/hosted/pub.dev/injectable-2.4.4",
       "packageUri": "lib/",
@@ -668,7 +674,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-08-18T16:43:37.827220Z",
+  "generated": "2024-09-01T18:06:23.165724Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/damianszmulik/Desktop/devtools/flutter",

@@ -4,10 +4,12 @@ import 'package:dailyx/presentation/pages/main/widgets/tasks_list_item.dart';
 import 'package:dailyx/presentation/widgets/end_drawer/custom_end_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icon_decoration/icon_decoration.dart';
 import 'package:intl/intl.dart';
 import 'package:stroke_text/stroke_text.dart';
 
 import '../../../domain/models/tasks/task.dart';
+import '../../widgets/bottombar/custom_bottombar.dart';
 import 'cubit/main_page_cubit.dart';
 
 
@@ -64,7 +66,7 @@ class _MainPageState extends State<MainPage> {
               Builder(
                 builder: (context) => IconButton(
                   padding: const EdgeInsets.only(top: 10),
-                  icon: const Icon(Icons.more_horiz, color: Colors.white,),
+                  icon: const DecoratedIcon(icon: Icon(Icons.more_horiz, color: Colors.white,),decoration: IconDecoration(border: IconBorder(width: 2)),),
                   onPressed: () => Scaffold.of(context).openEndDrawer(),
                   tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
                 ),
@@ -81,14 +83,15 @@ class _MainPageState extends State<MainPage> {
             error: (message) => Container()
           ),
           endDrawer: const CustomEndDrawer(),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: const Color.fromARGB(255, 255, 218, 162),
-            child: const Icon(
-              Icons.add, 
-              color: Colors.white,
-            ),
-            onPressed: () => _navigateToTaskCreationForm()
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //   backgroundColor: const Color.fromARGB(255, 255, 218, 162),
+          //   child: const Icon(
+          //     Icons.add, 
+          //     color: Colors.white,
+          //   ),
+          //   onPressed: () => _navigateToTaskCreationForm()
+          // ),
+          bottomNavigationBar: const CustomBottombar(),
         ),
       ),
     );
@@ -138,11 +141,23 @@ class _MainPageState extends State<MainPage> {
               BlocProvider.of<MainPageCubit>(context).getTasksList(focusedDay);
             });
           }, 
-          icon: const Icon(Icons.arrow_left_rounded, color: Colors.white, size: 50,),
+          icon: const DecoratedIcon(
+            decoration: IconDecoration(
+              border: IconBorder(
+                width: 2
+              )
+            ),
+            icon: Icon(
+              Icons.arrow_left_rounded, 
+              color: Colors.white, 
+              size: 50,
+            )
+          )
         ),
-        Text(
-          formatter.format(focusedDay),
-          style: const TextStyle(
+        StrokeText(
+          text: formatter.format(focusedDay),
+          strokeWidth: 1.8,
+          textStyle: const TextStyle(
             color: Colors.white,
             fontSize: 16,
             fontWeight: FontWeight.bold
@@ -155,7 +170,18 @@ class _MainPageState extends State<MainPage> {
               BlocProvider.of<MainPageCubit>(context).getTasksList(focusedDay);
             });
           }, 
-          icon: const Icon(Icons.arrow_right_rounded, color: Colors.white, size: 50,)
+          icon: const DecoratedIcon(
+            decoration: IconDecoration(
+              border: IconBorder(
+                width: 2
+              )
+            ),
+            icon: Icon(
+              Icons.arrow_right_rounded, 
+              color: Colors.white, 
+              size: 50,
+            )
+          )
         ),
       ],
     );

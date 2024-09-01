@@ -10,19 +10,19 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		ME0cAg6cl/bTZmwXEVgMugDccUI=
+		qVq3PYC0oG2EeousW6PXJYlT4gs=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		HEUfGeJxGTnXJJfKYNoyqhgTkKk=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		vKJkVIcw+LGHFnKJGwrQwCREv68=
+		Vwk9ewBqRIZT7ytDiyjOb+41GV0=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		YYUfmzcmU/VpBIsqfvklqZZNsFY=
+		8uO1UW701FBw1gafyDHTHDO16/E=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -34,11 +34,35 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		kv0P4VIx+KWbcPs6m1wvZPQHvFo=
+		96mTRsr/rZMFfjE5bZUztH8+mOQ=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		Bvk+P1ykE1PGRdktwgwDyz6AOqM=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Black.ttf</key>
+		<data>
+		4oZUwScTFDv91y+MVZxIoZwcvxg=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Bold.ttf</key>
+		<data>
+		AT8bvLvYCZGl8A/KUqkNDXq4uB8=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Light.ttf</key>
+		<data>
+		UduuRUOqoQCW40Tkj8/+RovTFKk=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Medium.ttf</key>
+		<data>
+		/dyLHGiO87rtDVpGq/XwHw7a8Cs=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Regular.ttf</key>
+		<data>
+		hNECSIc4sOu8elCHlz7/vVTJW9U=
+		</data>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Thin.ttf</key>
+		<data>
+		4HxAC1XvSsf7X/mnnTAXEpIsaBs=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -55,28 +79,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AK9VrT1vIYmP534P8JLRoc2lLJQbaGDpko1FyK+MCV0=
+			D5IFw5Bgqi4dLuDg63rhzxhbt4E2o23Q0eC5qZfaig4=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			0DQ6abGJPz+DgOVOjWWbqnTLZ1IhqaKQD0+Kd7lhN0I=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
+			ORZFZUZLgPUeKPg+47L8tRC0N/pIRs1KnZe+br+MJ0o=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jLjrQ4JlCz68xtV42y+JnqCZ+wwq51/zU2ey6wjnFF0=
+			M6NR9E44HrcNTwMy/HWiyHsr6k0yfZYZ5jeb8oFMiP4=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -97,7 +121,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RyK3Bb8GBzLvDs/WNKVDWz15Dauyjd4QwYvQkKC8bYY=
+			3yAp6eRnG2y5tBcpvfBzoNS/EjxxnoRwW/f1ExVUT7o=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -105,6 +129,48 @@
 			<key>hash2</key>
 			<data>
 			Z8RP6Rg7AC553ef2l34piGYcmj5KPF/OloeH79vtgjw=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Black.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LjN2g2L9NX54HQFnDbHSJt+0hMbyt2nzt5hGnuH4KtY=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Bold.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uvRM6BY2zJJ/wndoQ35dqFO6xpnoqvgy0ELw3+0ptLQ=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Light.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KDWzWKqqMp+aS7R5NslmhyAsokd0ouHHglGllvKwH6U=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Medium.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SsjgNgb/pMN/YaZRCiCA8fN6cFT0cmwhSIfTsj9y42k=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Regular.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MZz/bnox8PKkHEddykKJCqXRn+FgF+IpD4wdThT3ZIE=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/icon_decoration/assets/fonts/Roboto/Roboto-Thin.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			v5dgpIIWiNVE7H2vunsGCrH6dYNgQDU3V5vwZ5LSkPg=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
