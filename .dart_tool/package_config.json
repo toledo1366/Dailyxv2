@@ -188,6 +188,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_hooks",
+      "rootUri": "file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_hooks-0.20.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3",
       "packageUri": "lib/",
@@ -264,6 +270,12 @@
       "rootUri": "file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hive_generator-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "hooked_bloc",
+      "rootUri": "file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hooked_bloc-1.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "http",
@@ -656,7 +668,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-12-23T22:43:05.744791Z",
+  "generated": "2024-12-25T20:48:44.510982Z",
   "generator": "pub",
   "generatorVersion": "3.4.0",
   "flutterRoot": "file:///D:/flutter/flutter",

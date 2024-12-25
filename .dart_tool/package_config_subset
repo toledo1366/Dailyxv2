@@ -118,6 +118,10 @@ flutter_bloc
 2.12
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/
+flutter_hooks
+2.17
+file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_hooks-0.20.5/
+file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_hooks-0.20.5/lib/
 flutter_lints
 2.19
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3/
@@ -162,6 +166,10 @@ hive_generator
 2.12
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hive_generator-2.0.1/
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hive_generator-2.0.1/lib/
+hooked_bloc
+2.19
+file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hooked_bloc-1.5.0/
+file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/hooked_bloc-1.5.0/lib/
 http
 3.3
 file:///C:/Users/damia/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.2/
