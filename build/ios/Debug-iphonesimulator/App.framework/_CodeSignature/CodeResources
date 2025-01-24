@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		qVq3PYC0oG2EeousW6PXJYlT4gs=
+		4PrNXvgIPp/5xMAUYsZyDYSqlsE=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		HEUfGeJxGTnXJJfKYNoyqhgTkKk=
+		yogQUfYuqrGSWMwu907sGNv7ee8=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		8uO1UW701FBw1gafyDHTHDO16/E=
+		dQagYbLTjcnEDHx8Y4JB2UzvUgI=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		NOOuIrmqIJHAECyJhxYTSwmeSfs=
+		cwnrd7SVzU/+IluNxTgC2ALcd2w=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		96mTRsr/rZMFfjE5bZUztH8+mOQ=
+		h5fmAs9nSnPgiCQmTYWTinAfKqI=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -64,13 +64,53 @@
 		<data>
 		4HxAC1XvSsf7X/mnnTAXEpIsaBs=
 		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/close.png</key>
+		<data>
+		ia7QsKV7Dyp7KxIjL8JGL3CzbyE=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/confirm.png</key>
+		<data>
+		ADDmruJCgxB8AwhOgkiAa/ty8bQ=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/error.png</key>
+		<data>
+		cH9dy2b7cVbArUwutfAzUhyIbz8=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/info.png</key>
+		<data>
+		AH4F13p7aD4mtfnXjrcOl1sYnkY=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/prohibit.png</key>
+		<data>
+		BTRBSplBU56pRSmW3b9yH7cdfpg=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/right.png</key>
+		<data>
+		MILshmIU2fQp8K64fW/lwlZqGns=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/search.png</key>
+		<data>
+		fiLe2eQxDayNUfP0LjoROj84U2U=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/success.png</key>
+		<data>
+		HZYnQlcavkK0HOtbtb5E3oJAm8Y=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/warning.png</key>
+		<data>
+		SzIZkvhNAvk47mrnHxEwhfZ4DPU=
+		</data>
+		<key>flutter_assets/packages/widgets_easier/assets/images/image_loading_failed.png</key>
+		<data>
+		DcX1r13o35kLUZTZQIdQWkJjHvQ=
+		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		p79zzJ85/yOQo5OGiBW5XF0+CxY=
+		VoVnsu58hN7wrwazX0nyAopiB0Q=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		5pZuXudFN+/X6GBnZRBE8DbuhuQ=
+		ituzZzkouVPX475mGIvTzzeOnk8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,14 +119,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			D5IFw5Bgqi4dLuDg63rhzxhbt4E2o23Q0eC5qZfaig4=
+			HmPw5uY9Q9yHwfdqLp9eeYBNeel+JKlj9FJHOCZGGwM=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0DQ6abGJPz+DgOVOjWWbqnTLZ1IhqaKQD0+Kd7lhN0I=
+			VI6l7GQLfJkXinftBQSnbJ1O6msRtrJsyiALdsi6KHI=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -100,7 +140,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M6NR9E44HrcNTwMy/HWiyHsr6k0yfZYZ5jeb8oFMiP4=
+			fqPkjDfNL6cE8lAetbKLbx/luBGRLKTUBqoX6OxT1Xw=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -114,14 +154,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXgx8A4Zzj2le7NQFnsz1lOzJ640XPWxEuPwtsgqWWk=
+			QogPK7LScf8HpyrdsTpkL8WOPl9NnQTGL1N2R05tsZE=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3yAp6eRnG2y5tBcpvfBzoNS/EjxxnoRwW/f1ExVUT7o=
+			He+drAPmWGuloVAHfT5YRbe6xBEdGVMzOJtaBP9X0+w=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -173,18 +213,88 @@
 			v5dgpIIWiNVE7H2vunsGCrH6dYNgQDU3V5vwZ5LSkPg=
 			</data>
 		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/close.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2SkAyTD8gkMDyHso7T8/yMN/VusUgcdf73T2OwQVyXI=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/confirm.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uKm5T2TSBiASvnvU9iyf5vd+9WFMx04jedu6WaGcj/8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/error.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jh9gy9+DVeUBtTS+obZoVjEqz0dVeO8ob1TxtS3b+vM=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/info.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Mz01XLlZWMyzBseiwQXFxC7pD8fCsLMhSbkksM8FQF8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/prohibit.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DY9LzhOEk63DQ9NE5gvpk1Z+EQDru876C3/hULI9Yss=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/right.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cLtjq8wYXN1uwwvENFWAsNk4L7lrM2r442cvrPbvDao=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/search.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zw8wQeEcSqO4AE6RbVaS/LIAojClqCEvql/EYRzaqhE=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/success.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hhnGBnSdCelZ8ePqrkoE4XJjfYQY3ojJk49CwX7QbL8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/icons/warning.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0j+MBGW0uLJkhw4KYYAKo2g9UKji/sDq5FCFfZIBGpM=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/widgets_easier/assets/images/image_loading_failed.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CHQXIODzP69lfCBkuu49yJm4956o9u9e3v9AW7Eo3hM=
+			</data>
+		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ggsttSoN6c2kH04/7vNnFwBQTTy8j9ILVF4lU1822Bk=
+			4PC1vOWKHlNOnW4dGwFfD4TPwBCllniPCsOy7+1X5co=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OKT7zSYjvmy6bkUt/xrnwXxv1rygk4kGDCZd1F+nKug=
+			L8Ll/5LQYd/uiFbt7jD8B17se0Auql4jpiImNFSyl6A=
 			</data>
 		</dict>
 	</dict>

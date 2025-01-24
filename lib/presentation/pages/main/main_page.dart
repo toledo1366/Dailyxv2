@@ -1,6 +1,6 @@
 import 'package:dailyx/core/di/di.dart';
 import 'package:dailyx/core/routing/app_router.dart';
-import 'package:dailyx/presentation/pages/main/widgets/tasks_list_item.dart';
+import 'package:dailyx/presentation/pages/main/widgets/diary_summary_entry_widget/diary_summary_entry_widget.dart';
 import 'package:dailyx/presentation/widgets/end_drawer/custom_end_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +8,6 @@ import 'package:icon_decoration/icon_decoration.dart';
 import 'package:intl/intl.dart';
 import 'package:stroke_text/stroke_text.dart';
 
-import '../../../domain/models/tasks/task.dart';
 import '../../widgets/bottombar/custom_bottombar.dart';
 import 'cubit/main_page_cubit.dart';
 
@@ -74,53 +73,48 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
           body: state.map(
-            created: (_) => Container(), 
-            loading: (_) => Container(), 
-            tasksLoaded: (value) => SafeArea(
+            created: (_) => SafeArea(
               bottom: false,
-              child: buildContent(context, cubit, value.tasks),
+              child: buildContent(context),
             ), 
+            loading: (_) => Container(), 
             error: (message) => Container()
           ),
           endDrawer: const CustomEndDrawer(),
-          // floatingActionButton: FloatingActionButton(
-          //   backgroundColor: const Color.fromARGB(255, 255, 218, 162),
-          //   child: const Icon(
-          //     Icons.add, 
-          //     color: Colors.white,
-          //   ),
-          //   onPressed: () => _navigateToTaskCreationForm()
-          // ),
           bottomNavigationBar: const CustomBottombar(),
         ),
       ),
     );
   }
   
-  Widget buildContent(BuildContext context, MainPageCubit cubit, List<Task> tasks) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0), 
-          child: Text(
-            'Podsumowanie',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),
-          ),
-        ),        
-        buildSummary(context),
-        Expanded(
-          flex: 3,
-          child: ListView.builder(
-            itemCount: tasks.length,
-            itemBuilder: (context, index) => TaskListItem(task: tasks[index])
-          ),
-        ),
-      ],
+  Widget buildContent(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0, right: 20), 
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          DiarySummaryEntryWidget()
+          // const Padding(
+          //   padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0), 
+          //   child: Text(
+          //     'Podsumowanie',
+          //     style: TextStyle(
+          //       color: Colors.black,
+          //       fontWeight: FontWeight.bold,
+          //       fontSize: 15,
+          //     ),
+          //   ),
+          // ),        
+          // buildSummary(context),
+          // Expanded(
+          //   flex: 3,
+          //   child: ListView.builder(
+          //     itemCount: tasks.length,
+          //     itemBuilder: (context, index) => TaskListItem(task: tasks[index])
+          //   ),
+          // ),
+        ],
+      ),
     );
   }
 

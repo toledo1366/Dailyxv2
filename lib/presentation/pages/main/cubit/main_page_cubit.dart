@@ -14,11 +14,9 @@ class MainPageCubit extends Cubit<MainPageState>{
 
   final GetTasksUseCase _getTasksUseCase;
 
-  MainPageCubit(this._getTasksUseCase) : super(const MainPageState.created());
+  MainPageCubit(this._getTasksUseCase) : super(const MainPageState.loading());
 
   void getTasksList(DateTime selectedDate) async {
-    emit(const MainPageState.loading());
-
     if(tasks.isEmpty){
       tasks = await _getTasksUseCase.execute();
     }
@@ -31,13 +29,15 @@ class MainPageCubit extends Cubit<MainPageState>{
       }
     }
 
-    if(tasksForSelectedDate.isNotEmpty) {
-      emit(MainPageState.tasksLoaded(tasksForSelectedDate));
+    emit(const MainPageState.created());
 
-      return;
-    }
+    // if(tasksForSelectedDate.isNotEmpty) {
+    //   emit(MainPageState.tasksLoaded(tasksForSelectedDate));
 
-    emit(const MainPageState.error('Brak zadań na dziś'));
+    //   return;
+    // }
+
+    // emit(const MainPageState.error('Brak zadań na dziś'));
   }
 
 
