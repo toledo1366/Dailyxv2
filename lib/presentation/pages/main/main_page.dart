@@ -89,7 +89,7 @@ class _MainPageState extends State<MainPage> {
   
   Widget buildContent(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0, right: 20), 
+      padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0, right: 20.0), 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

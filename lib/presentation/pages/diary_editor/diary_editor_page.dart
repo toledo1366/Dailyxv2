@@ -13,6 +13,8 @@ class DiaryEditorPage extends StatefulWidget {
 }
 
 class _DiaryEditorPageState extends State<DiaryEditorPage> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class _DiaryEditorPageState extends State<DiaryEditorPage> {
         title: const Padding(
           padding: EdgeInsets.only(top: 10, left: 15),
             child: StrokeText(
-            text: 'Jak Ci minął dzień?', 
+            text: 'Powiedz jak Ci minął dzień?', 
             textStyle: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold
@@ -49,13 +51,43 @@ class _DiaryEditorPageState extends State<DiaryEditorPage> {
           ),
         ],
       ),
-      body: _buildContent(context),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0, right: 20.0), 
+        child: _buildContent(context),
+      ),
       endDrawer: const CustomEndDrawer(),
       bottomNavigationBar: const CustomBottombar(),
     );
   }
 
   Widget _buildContent(BuildContext context) {
-    return Placeholder();
+    return Column(
+      children: [
+        Form(
+          key: _formKey,
+          child: Container(
+            padding: const EdgeInsets.all(15.0),
+            height: 500,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: const Border.fromBorderSide(BorderSide()),
+              borderRadius: BorderRadius.circular(20.0)
+            ),
+            child: TextFormField(
+              maxLines: 1000,
+              cursorColor: Colors.black,
+              decoration: const InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide.none
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide.none
+                )
+              ),
+            ),
+          )
+        )
+      ],
+    );
   }
 }

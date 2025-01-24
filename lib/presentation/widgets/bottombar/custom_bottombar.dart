@@ -1,3 +1,4 @@
+import 'package:dailyx/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_decoration/icon_decoration.dart';
 
@@ -30,7 +31,7 @@ class _CustomBottombarState extends State<CustomBottombar> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              onPressed: () {}, 
+              onPressed: () => router.go('/'), 
               icon: const DecoratedIcon(
                 icon: Icon(
                   Icons.home,
