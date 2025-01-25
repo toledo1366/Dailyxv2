@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroke_text/stroke_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   final Widget child;
@@ -9,12 +10,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: false,
-      title: const Text(
-        'Cześć, Damian!', 
-        style: TextStyle(
+      title: const StrokeText(
+        text: 'Cześć, Damian!', 
+        textStyle: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold
         ),
+        strokeColor: Colors.black,
       ),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(

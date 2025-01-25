@@ -34,6 +34,7 @@ class _CustomBottombarState extends State<CustomBottombar> {
               onPressed: () => router.go('/'), 
               icon: const DecoratedIcon(
                 icon: Icon(
+                  size: 30,
                   Icons.home,
                   color: Colors.white,
                 ), 
@@ -48,6 +49,7 @@ class _CustomBottombarState extends State<CustomBottombar> {
               onPressed: () {}, 
               icon: const DecoratedIcon(
                 icon: Icon(
+                  size: 30,
                   Icons.list,
                   color: Colors.white,
                 ), 
@@ -62,6 +64,7 @@ class _CustomBottombarState extends State<CustomBottombar> {
               onPressed: () {}, 
               icon: const DecoratedIcon(
                 icon: Icon(
+                  size: 30,
                   Icons.note_alt,
                   color: Colors.white,
                 ), 

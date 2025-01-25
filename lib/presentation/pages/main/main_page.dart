@@ -41,9 +41,11 @@ class _MainPageState extends State<MainPage> {
                 child: StrokeText(
                 text: 'Cześć, Damian!', 
                 textStyle: TextStyle(
+                  fontSize: 24,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.bold,
                 ),
+                strokeWidth: 2,
                 strokeColor: Colors.black,
               ),
             ),
@@ -123,7 +125,7 @@ class _MainPageState extends State<MainPage> {
   }
   
   Widget buildDaySelector(BuildContext context) {
-    DateFormat formatter = DateFormat('EEE, d MMMM, y', 'pl_PL');
+    DateFormat formatter = DateFormat('EEEE,', 'pl_PL').add_yMd();
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -153,7 +155,7 @@ class _MainPageState extends State<MainPage> {
           strokeWidth: 1.8,
           textStyle: const TextStyle(
             color: Colors.white,
-            fontSize: 16,
+            fontSize: 18,
             fontWeight: FontWeight.bold
           ),
         ),
